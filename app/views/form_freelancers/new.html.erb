@@ -1,0 +1,31 @@
+<%= form_with model: @form_freelancer, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :job %><br>
+    <%= form.text_field :job %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </p>
+ 
+ <p>
+    <%= form.label :customer %><br>
+    <%= form.text_field :customer %>
+  </p>
+  <p>
+    <%= form.label :income %><br>
+    <%= form.text_field :income %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

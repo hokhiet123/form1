@@ -1,0 +1,46 @@
+<%= form_with model: @form_employee, local: true do |form| %>
+  <p>
+    <%= form.label :companyname %><br>
+    <%= form.text_field :companyname %>
+  </p>
+ 
+  <p>
+    <%= form.label :tax %><br>
+    <%= form.text_field :tax %>
+  </p>
+
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :position %><br>
+    <%= form.text_field :position %>
+  </p>
+
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </p>
+ 
+ <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.label :income %><br>
+    <%= form.text_field :income %>
+  </p>
+  <p>
+    <%= form.label :note %><br>
+    <%= form.text_field :note %>
+  </p>
+  
+    <%= form.submit %>
+  </p>
+<% end %>
