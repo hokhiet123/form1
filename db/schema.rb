@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_035708) do
+ActiveRecord::Schema.define(version: 2020_08_10_043118) do
 
   create_table "form_employees", force: :cascade do |t|
     t.string "companyname"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_08_08_035708) do
     t.string "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_form_employees_on_user_id"
   end
 
   create_table "form_freelancers", force: :cascade do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_08_08_035708) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_form_freelancers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_08_08_035708) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "form_employees", "users"
+  add_foreign_key "form_freelancers", "users"
 end

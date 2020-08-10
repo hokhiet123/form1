@@ -4,13 +4,17 @@ class FormEmployeesController < ApplicationController
   end
 
   def create
-    @form_employee = FormEmployee.new(form_employee_params)
+    @form_employee = FormEmployee.new(form_employee_params.merge(user_id: current_user.id))
    
     if @form_employee.save
       redirect_to current_user
     else
       render 'new'
     end
+  end
+
+  def index
+    @form_employee = current_user.form_employees
   end
    
   private
